@@ -8,7 +8,7 @@ services:
       - pg-data:/var/lib/postgresql/data #data
       - ./api/db/schema.sql:/docker-entrypoint-initdb.d/schema.sql
     ports:
-      - "127.0.0.1:${DB_PORT}:5432"
+      - "10.99.3.164:${DB_PORT}:5432"
     environment:
       - POSTGRES_DB=postgres
       - POSTGRES_USER=postgres
@@ -22,7 +22,7 @@ services:
       - PGADMIN_DEFAULT_EMAIL=${PGADMIN_DEFAULT_EMAIL}
       - PGADMIN_DEFAULT_PASSWORD=${PGADMIN_DEFAULT_PASSWORD}
     ports:
-      - "127.0.0.1:${PGADMIN_PORT}:80"
+      - "10.99.3.164:${PGADMIN_PORT}:80"
     volumes:
       - pgadmin-data:/var/lib/pgadmin
     links:
@@ -33,7 +33,7 @@ services:
     image: redis:alpine
     restart: always
     ports:
-      - "127.0.0.1:${REDIS_PORT}:6379"
+      - "10.99.3.164:${REDIS_PORT}:6379"
     command: redis-server --save 20 1 --loglevel warning
     volumes:
       - redis-data:/data
