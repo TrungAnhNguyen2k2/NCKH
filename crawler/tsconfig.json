@@ -1,0 +1,28 @@
+{
+  "ts-node": {
+    "files": true
+  },
+  "compilerOptions": {
+    /* Basic Options */
+    "outDir": "dist",
+    "rootDir": "src",
+    "target": "ES2020",
+    "module": "commonjs",
+    "lib": ["ESNext", "DOM", "dom.iterable", "ES2021.String", "ES2021"],
+    "typeRoots": ["./src/types"],
+    "strictNullChecks": false,
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Module Resolution Options */
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["src"],
+  "references": [{"path": "../libts"}]
+}
